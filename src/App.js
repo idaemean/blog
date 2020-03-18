@@ -10,7 +10,9 @@ import "./App.css";
 import {BrowserRouter as Router, Link, Route, Switch} from "react-router-dom";
 import CreateArticle from "./components/create-article.component";
 import EditArticle from "./components/edit-article.component";
-import ArticleList from "./components/article-list.component"
+import ArticleList from "./components/article-list.component";
+import Kontakt from "./components/kontakt.component";
+import OMnie from "./components/o-mnie.component"
 
 function App() {
   return (<Router>
@@ -33,6 +35,12 @@ function App() {
               <Link to={"/article-list"} className="nav-link">
                 Article list
               </Link>
+              <Link to={"/kontakt"} className="nav-link">
+                Kontakt
+              </Link>
+              <Link to={"/o-mnie"} className="nav-link">
+                O mnie
+              </Link>
             </Nav>
           </Nav>
 
@@ -49,6 +57,8 @@ function App() {
               <Route path="/create-article" component={CreateArticle}/>
               <Route path="/article-list" component={ArticleList}/>
               <Route path="/edit-article/:id" component={EditArticle}/>
+              <Route path="/kontakt" component={Kontakt}/>
+              <Route path="/o-mnie" component={OMnie}/>
             </Switch>
 
 

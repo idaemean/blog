@@ -22,6 +22,7 @@ export default class CreateArticle extends Component {
 
     onChangeArticleTitle(e) {
         this.setState({title: e.target.value})
+
     }
 
     onChangeArticleAuthor(e) {
@@ -34,6 +35,9 @@ export default class CreateArticle extends Component {
 
     onSubmit(e) {
         e.preventDefault()
+        if ( this.state.title.length >2 && this.state.title.length<20 ){
+            if (this.state.content.length >2 && this.state.content.length<20  ) {
+                if (this.state.author.includes("@")) {
 
         const article = {
             title: this.state.title,
@@ -49,6 +53,9 @@ export default class CreateArticle extends Component {
             author: '',
             content: ''
         })
+        }
+            }
+        }
     }
 
     render() {
